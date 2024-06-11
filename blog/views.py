@@ -4,7 +4,7 @@ from .models import Post
 from .forms import CommentForm
 
 
-class postList(generic.ListView):
+class PostList(generic.ListView):
     model = Post
     queryset=Post.objects.filter(status=1).order_by('-created_on')
     template_name='index.html'
@@ -58,7 +58,7 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "commented": True,
-                "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form,
+                "liked": liked
             },
         )
