@@ -33,7 +33,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">S<span class="red-o">o</span>lo<span
-                        class="thin">|Travel</span></span></span></a>
+                        class="thin">|Travel</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -65,6 +65,22 @@
         </div>
     </nav>
 
+    <!-- Message Alerts -->
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show shadow-sm" id="msg" role="alert">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>{{ message | safe }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
@@ -79,6 +95,35 @@
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
+    <style>
+        .alert {
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            background-color: rgba(205, 239, 240, 0.974);
+        }
+
+        .alert .btn-close {
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .alert .btn-close:hover {
+            opacity: 1;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+        }
+    </style>
 </body>
 
 </html>
