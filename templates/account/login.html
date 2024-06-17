@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
+
+{% load socialaccount %}
+
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -64,6 +66,25 @@
     form.login {
         margin-top: 20px;
     }
+
+    .social-login {
+        margin-bottom: 20px;
+    }
+
+    .social-login a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #db4437; /* Google red */
+        color: white;
+        text-align: center;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .social-login a:hover {
+        background-color: #c23321;
+    }
 </style>
 
 <div class="container">
@@ -71,7 +92,10 @@
         <div class="col-md-6">
             <div class="card">
                 <h3>{% trans "Sign In" %}</h3>
-                <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                <div class="social-login">
+                    <a href="{% provider_login_url 'google' %}">{% trans "Log in with Google" %}</a>
+                </div>
+                <p>{% trans "Welcome back to the code|star blog. To leave a comment or like a post, please log in. If you have not created an account yet, then" %} <a class="link" href="{% url 'account_signup' %}">{% trans "sign up" %}</a> {% trans "first." %}</p>
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {{ form.as_p }}

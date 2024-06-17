@@ -151,6 +151,12 @@
                         <span class="text-muted font-weight-normal"> {{ comment.created_on }} </span> wrote:
                     </p>
                     <p class="mb-0">{{ comment.body | linebreaks }}</p>
+                    {% if user.is_authenticated and user == comment.user %}
+                    <form class="d-inline" action="{% url 'delete_comment' comment.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -165,10 +171,13 @@
                 {% if user.is_authenticated %}
                 <h3 class="card-header bg-light mb-3">Leave a comment:</h3>
                 <p>Posting as: <strong>{{ user.username }}</strong></p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg btn-primary">Submit</button>
+                    <button type="button" class="btn btn-signup btn-lg btn-primary" onclick="handleCommentFormSubmit()">Submit</button>
+                    <div id="error-message" class="alert alert-danger mt-3" style="display: none;" role="alert">
+                        Please enter a comment before submitting.
+                    </div>
                 </form>
                 {% endif %}
                 {% endif %}
@@ -176,5 +185,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    function handleCommentFormSubmit() {
+        var commentInput = document.querySelector('textarea[name="body"]');
+        var errorMessage = document.getElementById('error-message');
+        console.log("Validating comment form");
+        if (commentInput && !commentInput.value.trim()) {
+            errorMessage.style.display = 'block';
+            console.log("Empty comment submitted, preventing submission");
+        } else {
+            errorMessage.style.display = 'none';
+            console.log("Comment submitted");
+            document.getElementById('commentForm').submit();
+        }
+    }
+</script>
 
 {% endblock content %}
