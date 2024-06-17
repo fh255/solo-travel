@@ -78,8 +78,8 @@ if not GOOGLE_OAUTH_CLIENT_ID or not GOOGLE_OAUTH_CLIENT_SECRET:
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': GOOGLE_OAUTH_CLIENT_ID,
-            'secret': GOOGLE_OAUTH_CLIENT_SECRET,
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     }
