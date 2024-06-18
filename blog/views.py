@@ -1,17 +1,32 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
-
+from django.urls import reverse_lazy
+from django.utils.text import slugify 
 
 class PostList(generic.ListView):
     model = Post
-    queryset=Post.objects.filter(status=1).order_by('-created_on')
-    template_name='index.html'
-    paginate_by=6
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
+    paginate_by = 6
 
+
+class AddPostView(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = ('title', 'content','status',)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
 class PostDetail(View):
 
@@ -40,7 +55,7 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if post.likes.filter(id=request.user.id).exists():
             liked = True
 
         comment_form = CommentForm(data=request.POST)

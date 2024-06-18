@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+from django.utils.text import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -19,14 +21,18 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
+    likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('home', kwargs={'slug': self.slug})
+
+        #return reverse('home')
 
     def number_of_likes(self):
         return self.likes.count()
