@@ -1,23 +1,56 @@
-/* General styles */
 body {
     background-color: #F9FAFC;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5rem; /* Increased font size for better visibility */
+    font-weight: 900; /* Bolder font weight */
+    color: #2C3E50; /* Darker color for the main text */
+    display: inline-block;
+    position: relative;
 }
 
-.red-o {
-    color: #E84610;
+.highlight {
+    color: #16A085; /* Teal color for the letter "o" */
+    font-size: 3rem; /* Larger font size for emphasis */
+    vertical-align: middle;
+    font-weight: 700; /* Slightly less bold to differentiate */
 }
 
-.thin {
-    font-weight: 300;
+.accent {
+    font-weight: 300; /* Thin or lighter font weight */
+    color: #E74C3C; /* Red color for "|Travel" */
+    font-style: italic; /* Italic style for emphasis */
+    margin-left: 0.2em;
 }
 
+.brand::before {
+    content: 'Explore the world with ';
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #7F8C8D; /* Grey color for the subtitle */
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.brand:hover {
+    color: #2980B9; /* Blue color on hover for the main text */
+}
+
+.highlight:hover {
+    color: #1ABC9C; /* Lighter teal color on hover */
+}
+
+.accent:hover {
+    color: #C0392B; /* Darker red color on hover */
+}
+
+/* Background color styles */
 .light-bg {
     background-color: #fff;
 }
@@ -30,6 +63,32 @@ body {
     background-color: #F9FAFC;
 }
 
+/* Adventure text styles */
+.adventure-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem; /* Slightly larger font size for visibility */
+    font-weight: 300; /* Light font weight */
+    color: #7F8C8D; /* Muted grey color */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 0.1rem; /* Spacing between letters */
+    position: relative; /* For positioning the pseudo-element */
+    padding-left: 1.5rem; /* Padding to make room for the icon */
+}
+
+/* .adventure-text::before {
+    content: "\f5fa"; /* Unicode for a Font Awesome icon (hiking) */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
+    font-weight: 900; /* Font weight for Font Awesome solid icons */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #16A085; /* Teal color for the icon */
+} */
+
+
+/* Card component styles */
 .card {
     border: 1px solid #dee2e6;
     border-radius: 4px;
@@ -53,6 +112,7 @@ body {
     color: #343a40;
 }
 
+/* Image container styles */
 .image-container {
     position: relative;
 }
@@ -71,6 +131,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Masthead styles */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -106,6 +167,7 @@ body {
     z-index: 100;
 }
 
+/* Link styles */
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -113,9 +175,10 @@ body {
 
 .post-link:hover,
 .page-link:hover {
-    color: #E84610;
+    color: #E84610; /* Change color on hover */
 }
 
+/* Post title and subtitle styles */
 .post-title {
     margin-top: 20%;
     margin-left: 5%;
@@ -126,6 +189,7 @@ body {
     color: lightgray;
 }
 
+/* Button styles */
 .btn-signup {
     background-color: #28a745;
     border: none;
@@ -141,7 +205,7 @@ body {
 }
 
 .btn-signup:hover {
-    background-color: #218838;
+    background-color: #218838; /* Darker green on hover */
 }
 
 .link {
@@ -151,9 +215,10 @@ body {
 
 .link:hover,
 .link:active {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover and active */
 }
 
+/* Form control styles */
 .form-control {
     border-radius: 4px;
 }
@@ -163,6 +228,7 @@ form.signup {
     margin-top: 20px;
 }
 
+/* Social login button styles */
 .social-login {
     margin-bottom: 20px;
 }
@@ -179,7 +245,7 @@ form.signup {
 }
 
 .social-login a:hover {
-    background-color: #c23321;
+    background-color: #c23321; /* Darker red on hover */
 }
 
 /* Alert styles */
@@ -197,7 +263,7 @@ form.signup {
 }
 
 .alert .btn-close:hover {
-    opacity: 1;
+    opacity: 1; /* Fully opaque on hover */
 }
 
 .shadow-sm {
@@ -215,18 +281,7 @@ form.signup {
     color: #6c757d;
 }
 
-.card {
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    margin-top: 20px;
-}
-
-.card-text {
-    color: #343a40;
-}
-
+/* Like button styles */
 .btn-like {
     background: none;
     border: none;
@@ -237,6 +292,7 @@ form.signup {
     font-size: 1.5rem;
 }
 
+/* Comment styles */
 .comments {
     background-color: #f8f9fa;
     border-radius: 4px;

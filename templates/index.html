@@ -25,10 +25,17 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
-                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-comments"></i>
-                                    {{ post.number_of_comments}}</p>
+                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-comments"></i>
+                                {{ post.number_of_comments }}</p>
+
+                            <!-- Edit and Delete buttons, visible only to the author -->
+                            {% if request.user == post.author %}
+                            <a href="{% url 'edit_post' post.slug %}" class="btn btn-warning">Edit</a>
+                            <a href="{% url 'delete_post' post.slug %}" class="btn btn-danger" 
+                                onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
