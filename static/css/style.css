@@ -1,11 +1,14 @@
+/* General body styles */
 body {
     background-color: #F9FAFC;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Brand name styles */
 .brand {
     font-family: 'Lato', sans-serif;
-    font-size: 2.5rem; /* Increased font size for better visibility */
-    font-weight: 900; /* Bolder font weight */
+    font-size: 2.5rem; /* Larger font size for better visibility */
+    font-weight: 900; /* Bolder font weight for emphasis */
     color: #2C3E50; /* Darker color for the main text */
     display: inline-block;
     position: relative;
@@ -13,7 +16,7 @@ body {
 
 .highlight {
     color: #16A085; /* Teal color for the letter "o" */
-    font-size: 3rem; /* Larger font size for emphasis */
+    font-size: 3rem; /* Even larger font size for emphasis */
     vertical-align: middle;
     font-weight: 700; /* Slightly less bold to differentiate */
 }
@@ -23,44 +26,6 @@ body {
     color: #E74C3C; /* Red color for "|Travel" */
     font-style: italic; /* Italic style for emphasis */
     margin-left: 0.2em;
-}
-
-.brand::before {
-    content: 'Explore the world with ';
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #7F8C8D; /* Grey color for the subtitle */
-    position: absolute;
-    top: -1.5rem;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
-}
-
-.brand:hover {
-    color: #2980B9; /* Blue color on hover for the main text */
-}
-
-.highlight:hover {
-    color: #1ABC9C; /* Lighter teal color on hover */
-}
-
-.accent:hover {
-    color: #C0392B; /* Darker red color on hover */
-}
-
-/* Background color styles */
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
 }
 
 /* Adventure text styles */
@@ -75,7 +40,7 @@ body {
     padding-left: 1.5rem; /* Padding to make room for the icon */
 }
 
-/* .adventure-text::before {
+.adventure-text::before {
     content: "\f5fa"; /* Unicode for a Font Awesome icon (hiking) */
     font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
     font-weight: 900; /* Font weight for Font Awesome solid icons */
@@ -85,8 +50,20 @@ body {
     transform: translateY(-50%);
     font-size: 1.2rem;
     color: #16A085; /* Teal color for the icon */
-} */
+}
 
+/* Background color styles */
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #445261;
+}
+
+.main-bg {
+    background-color: #F9FAFC;
+}
 
 /* Card component styles */
 .card {
@@ -167,85 +144,31 @@ body {
     z-index: 100;
 }
 
-/* Link styles */
-.post-link {
-    text-decoration: none;
-    color: #445261;
+/* Footer styles */
+.footer {
+    background-image: url('../images/forest-pathway.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    color: #fff;
 }
 
-.post-link:hover,
-.page-link:hover {
-    color: #E84610; /* Change color on hover */
+.footer p, .footer a {
+    color: #fff;
+    margin: 0;
 }
 
-/* Post title and subtitle styles */
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-/* Button styles */
-.btn-signup {
-    background-color: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-signup:hover {
-    background-color: #218838; /* Darker green on hover */
-}
-
-.link {
-    color: #28a745;
+.footer a:hover {
+    color: #E74C3C; /* Change the color on hover */
     text-decoration: none;
 }
 
-.link:hover,
-.link:active {
-    text-decoration: underline; /* Underline on hover and active */
+.footer i {
+    font-size: 1.5rem;
 }
 
-/* Form control styles */
-.form-control {
-    border-radius: 4px;
-}
-
-form.login,
-form.signup {
-    margin-top: 20px;
-}
-
-/* Social login button styles */
-.social-login {
-    margin-bottom: 20px;
-}
-
-.social-login a {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    background-color: #db4437; /* Google red */
-    color: white;
-    text-align: center;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.social-login a:hover {
-    background-color: #c23321; /* Darker red on hover */
+.footer .container {
+    max-width: 960px;
 }
 
 /* Alert styles */
@@ -263,52 +186,9 @@ form.signup {
 }
 
 .alert .btn-close:hover {
-    opacity: 1; /* Fully opaque on hover */
+    opacity: 1;
 }
 
 .shadow-sm {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-/* Post detail styles */
-.masthead .post-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #343a40;
-}
-
-.masthead .post-subtitle {
-    color: #6c757d;
-}
-
-/* Like button styles */
-.btn-like {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.btn-like i {
-    font-size: 1.5rem;
-}
-
-/* Comment styles */
-.comments {
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #dee2e6;
-}
-
-.comments .font-weight-bold {
-    color: #343a40;
-}
-
-.text-secondary {
-    color: #6c757d;
-}
-
-.text-muted {
-    color: #6c757d;
 }

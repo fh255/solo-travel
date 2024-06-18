@@ -2,88 +2,6 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<!-- <style>
-    .masthead {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .masthead .post-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #343a40;
-    }
-
-    .masthead .post-subtitle {
-        color: #6c757d;
-    }
-
-    .card {
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 20px;
-        background-color: #f8f9fa;
-        margin-top: 20px;
-    }
-
-    .card-text {
-        color: #343a40;
-    }
-
-    .btn-like {
-        background: none;
-        border: none;
-        padding: 0;
-    }
-
-    .btn-like i {
-        font-size: 1.5rem;
-    }
-
-    .comments {
-        background-color: #f8f9fa;
-        border-radius: 4px;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #dee2e6;
-    }
-
-    .comments .font-weight-bold {
-        color: #343a40;
-    }
-
-    .btn-signup {
-        background-color: #28a745;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 10px;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-signup:hover {
-        background-color: #218838;
-    }
-
-    .text-secondary {
-        color: #6c757d;
-    }
-
-    .text-muted {
-        color: #6c757d;
-    }
-
-    .form-control {
-        border-radius: 4px;
-    }
-</style> -->
-
 <div class="masthead">
     <div class="container">
         <div class="row g-0 align-items-center">
@@ -91,13 +9,16 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <!-- <div class="d-none d-md-block col-md-6 masthead-image">
+            <!-- Uncomment this section  to include the featured image in the masthead -->
+            <!--
+            <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="img-fluid rounded">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" class="img-fluid rounded">
                 {% endif %}
-            </div> -->
+            </div>
+            -->
         </div>
     </div>
 </div>
@@ -116,9 +37,13 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart text-danger"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                                    <i class="fas fa-heart text-danger"></i> Unlike
+                                </button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart text-secondary"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                                    <i class="far fa-heart text-secondary"></i> Like
+                                </button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -190,13 +115,10 @@
     function handleCommentFormSubmit() {
         var commentInput = document.querySelector('textarea[name="body"]');
         var errorMessage = document.getElementById('error-message');
-        console.log("Validating comment form");
         if (commentInput && !commentInput.value.trim()) {
             errorMessage.style.display = 'block';
-            console.log("Empty comment submitted, preventing submission");
         } else {
             errorMessage.style.display = 'none';
-            console.log("Comment submitted");
             document.getElementById('commentForm').submit();
         }
     }
