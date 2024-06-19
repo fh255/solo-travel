@@ -83,26 +83,27 @@ body {
 /* Adventure text styles */
 .adventure-text {
     font-family: 'Lato', sans-serif;
-    font-size: 1.2rem; /* Slightly larger font size for visibility */
-    font-weight: 300; /* Light font weight */
-    color: #7F8C8D; /* Muted grey color */
-    text-transform: uppercase; /* Uppercase letters */
-    letter-spacing: 0.1rem; /* Spacing between letters */
-    position: relative; /* For positioning the pseudo-element */
-    padding-left: 1.5rem; /* Padding to make room for the icon */
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #7F8C8D;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .adventure-text::before {
-    content: "\f5fa"; /* Unicode for a Font Awesome icon (hiking) */
-    font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
-    font-weight: 900; /* Font weight for Font Awesome solid icons */
+    content: "\f5fa";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2rem;
-    color: #16A085; /* Teal color for the icon */
+    color: #16A085;
 }
+
 
 /* Background color styles */
 .light-bg {
