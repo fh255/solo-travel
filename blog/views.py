@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm, EditPostForm
+from .models import Post, Image
+from .forms import CommentForm, PostForm, ImageForm
 from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -15,15 +15,31 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
-class AddPostView(CreateView):
+class AddPostView(LoginRequiredMixin, CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'add_post.html'
-    fields = ('title', 'content','status',)
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        if self.request.POST:
+            data['image_form'] = ImageForm(self.request.POST, self.request.FILES)
+        else:
+            data['image_form'] = ImageForm()
+        return data
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        form.instance.slug = slugify(form.instance.title)
-        return super().form_valid(form)
+        context = self.get_context_data()
+        image_form = context['image_form']
+        if image_form.is_valid():
+            form.instance.author = self.request.user
+            form.instance.slug = slugify(form.instance.title)
+            response = super().form_valid(form)
+            for image in self.request.FILES.getlist('photo'):
+                Image.objects.create(post=self.object, image=image)
+            return response
+        else:
+            return self.form_invalid(form)
 
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
@@ -34,6 +50,7 @@ class PostDetail(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
+        images = post.images.all()
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -44,6 +61,7 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
+                "images": images,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -54,6 +72,7 @@ class PostDetail(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
+        images = post.images.all()
         liked = False
         if post.likes.filter(id=request.user.id).exists():
             liked = True
@@ -74,6 +93,7 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
+                "images": images,
                 "commented": True,
                 "comment_form": comment_form,
                 "liked": liked
@@ -82,8 +102,27 @@ class PostDetail(View):
 
 class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    form_class = EditPostForm
+    form_class = PostForm
     template_name = 'edit_post.html'
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        if self.request.POST:
+            data['image_form'] = ImageForm(self.request.POST, self.request.FILES)
+        else:
+            data['image_form'] = ImageForm()
+        return data
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        image_form = context['image_form']
+        if image_form.is_valid():
+            response = super().form_valid(form)
+            for image in self.request.FILES.getlist('photo'):
+                Image.objects.create(post=self.object, image=image)
+            return response
+        else:
+            return self.form_invalid(form)
 
     def test_func(self):
         post = self.get_object()
@@ -91,7 +130,6 @@ class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
-
 
 class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
@@ -101,6 +139,7 @@ class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author or self.request.user.is_superuser
+
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)

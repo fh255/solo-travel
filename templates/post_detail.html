@@ -9,16 +9,6 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <!-- Uncomment this section  to include the featured image in the masthead -->
-            <!--
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" class="img-fluid rounded">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" class="img-fluid rounded">
-                {% endif %}
-            </div>
-            -->
         </div>
     </div>
 </div>
@@ -30,6 +20,15 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
+                <div>
+                    <h2>Images</h2>
+                    <div>
+                        {% for image in images %}
+                            <img src="{{ image.image.url }}" alt="{{ image.caption }}" style="max-width: 200px; margin: 10px;">
+                            <p>{{ image.caption }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-1 text-center">
                         <strong>

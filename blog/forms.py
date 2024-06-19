@@ -1,7 +1,5 @@
-# from .models import Comment
-# from django import forms
 from django import forms
-from .models import Post, Comment
+from .models import Post, Comment, Image
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -12,10 +10,33 @@ class CommentForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['body'].widget.attrs.update({
             'class': 'form-control',
-            'placeholder': 'Enter your post content here',
+            'placeholder': 'Enter your comment here',
         })
 
-class EditPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'status']
+        fields = ('title', 'content', 'status')
+
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
+
+class MultipleFileField(forms.FileField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("widget", MultipleFileInput())
+        super().__init__(*args, **kwargs)
+
+    def clean(self, data, initial=None):
+        single_file_clean = super().clean
+        if isinstance(data, (list, tuple)):
+            result = [single_file_clean(d, initial) for d in data]
+        else:
+            result = single_file_clean(data, initial)
+        return result
+
+class ImageForm(forms.ModelForm):
+    photo = MultipleFileField(label='Select files', required=False)
+
+    class Meta:
+        model = Image
+        fields = ['photo', ]
