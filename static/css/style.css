@@ -24,7 +24,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 .hero-container {
@@ -55,55 +55,207 @@ body {
     border-color: #3c0a62;
 }
 
+/* Add Post Page Styles */
+.add-post-card {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow */
+    padding: 20px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-control {
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #4a90e2; /* specific blue for the button */
+    border-color: #357abd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #357abd; /* darker blue on hover */
+    border-color: #2e6da4;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Login Page Styles */
+.login-card {
+    background-color: #ffffff; /* White background for clarity */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* subtle shadow for depth */
+    padding: 20px;
+}
+
+.btn-signup {
+    background-color: #28a745; /* Green background for sign-in button */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.btn-signup:hover {
+    background-color: #218838; /* darker green on hover */
+}
+
+/* Signup Page Styles */
+.signup-card {
+    background-color: #ffffff; /* White background for clarity */
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* subtle shadow for depth */
+    padding: 20px;
+}
+
+.signup-card h3 {
+    color: #343a40;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.signup-card p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.signup-card .btn-signup {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-card .btn-signup:hover {
+    background-color: #218838;
+}
+
+.signup-card .link {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.signup-card .link:hover {
+    text-decoration: underline;
+}
+
+.signup-card .form-control {
+    border-radius: 4px;
+}
+
+.signup-card form.signup {
+    margin-top: 20px;
+}
+
+/* Edit Post Page Styles */
+.edit-post-card {
+    background-color: #ffffff; /* White background for clarity */
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* subtle shadow for depth */
+    padding: 20px;
+}
+
+.edit-post-card h3 {
+    color: #343a40;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.edit-post-card .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-post-card .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.edit-post-card .form-control {
+    border-radius: 4px;
+}
+
+.edit-post-card form {
+    margin-top: 20px;
+}
+
+.existing-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-wrapper {
+    margin: 10px;
+}
+
+.img-thumbnail {
+    max-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for images */
+}
 
 /* Brand name styles */
 .brand {
     font-family: 'Lato', sans-serif;
-    font-size: 2.5rem; /* Larger font size for better visibility */
-    font-weight: 900; /* Bolder font weight for emphasis */
-    color: #2C3E50; /* Darker color for the main text */
+    font-size: 2.5rem; 
+    font-weight: 900; 
+    color: #2C3E50; 
     display: inline-block;
     position: relative;
 }
 
 .highlight {
-    color: #16A085; /* Teal color for the letter "o" */
-    font-size: 3rem; /* Even larger font size for emphasis */
+    color: #16A085; 
+    font-size: 3rem; 
     vertical-align: middle;
-    font-weight: 700; /* Slightly less bold to differentiate */
+    font-weight: 700; 
 }
 
 .accent {
-    font-weight: 300; /* Thin or lighter font weight */
-    color: #E74C3C; /* Red color for "|Travel" */
-    font-style: italic; /* Italic style for emphasis */
+    font-weight: 300; 
+    color: #E74C3C; 
+    font-style: italic; 
     margin-left: 0.2em;
 }
-
-/* Adventure text styles */
-/* .adventure-text {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #7F8C8D;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.adventure-text::before {
-    content: "\f5fa";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: #16A085;
-} */
-
 
 /* Background color styles */
 .light-bg {
@@ -162,8 +314,8 @@ body {
 }
 /* Remove Post Link design */
 .post-link {
-    text-decoration: none;  /* Removes underline */
-    color: inherit;  /* Keeps the text color consistent */
+    text-decoration: none;  
+    color: inherit;  
 }
 
 .post-link:hover, .post-link:focus {
