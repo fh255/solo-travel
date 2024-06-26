@@ -18,9 +18,9 @@ The site allows users to share their travel stories, upload photos from their jo
     * [Navigation bar:](#navigation-bar)
     * [Home page:](#home-page)
     * [Add post page:](#add-post-page)
-    * [Post detail page:](#post-detail-page)
+    * [Post edit page:](#post-edit-page)
     * [Post update page:](#post-update-page)
-    * [Comment update page:](#comment-update-page)
+    * [Delete post :](#delete-post)
     * [Register page:](#register-page)
     * [Login page:](#login-page)
     * [Logout page:](#logout-page)
@@ -220,6 +220,18 @@ Features Dependent on User Status:
      - The user can toggle their like status, liking or unliking the post.
 
  <img width="1269" alt="Login_comment" src="https://github.com/fh255/solo-travel/assets/34744096/c9c32881-85f7-4344-a24f-28627964fbd5">
+
+ #### Post edit page:
+ Authors can update their blog posts via the dedicated Post Update page, accessible from the "Update this post" link on the Post Detail page. This feature grants authors full control over their published content, allowing them to effortlessly edit and correct any information directly. All fields are conveniently pre-populated, ensuring a seamless editing experience to maintain accuracy and relevance.
+
+# picture
+
+
+ #### Delete Post Feature:
+ When a user chooses to delete their post, they will need to confirm their action. A modal window will be displayed, providing the user with options to either Delete or Cancel the deletion process. This ensures that users can proceed with confidence when removing their posts, while also offering a safeguard against accidental deletions.
+
+ <img width="457" alt="Delete Post" src="https://github.com/fh255/solo-travel/assets/34744096/4b115ada-5a10-4bcd-93e6-17f5e5d462c3">
+
 
  
 
