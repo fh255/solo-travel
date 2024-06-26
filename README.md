@@ -1,6 +1,6 @@
 # Solo Travel - Traveling Blog
 
-This is my fourth milestone project with Code Institute. Solo Travel is a Django-based blog application designed for travel enthusiasts, especially those who love exploring Switzerland.
+This is my fourth milestone project with Code Institute. Solo Travel is a Django-based blog application designed for travel enthusiasts, especially those who love exploring the Worls.
 
 The site allows users to share their travel stories, upload photos from their journeys, and interact with other posts by commenting, liking, and disliking the liked comments.
 
@@ -17,7 +17,6 @@ The site allows users to share their travel stories, upload photos from their jo
   * [Existing Features](#existing-features)
     * [Navigation bar:](#navigation-bar)
     * [Home page:](#home-page)
-    * [Blog page:](#blog-page)
     * [Add post page:](#add-post-page)
     * [Post detail page:](#post-detail-page)
     * [Post update page:](#post-update-page)
@@ -167,5 +166,41 @@ At the top of the homepage, this section greets users with a background image of
 ![Hero Small]<img width="188" alt="Home-small" src="https://github.com/fh255/solo-travel/assets/34744096/da7dab4b-a230-404c-9464-40c17ab5891e">
 
 </details>
+
+When users browse the pages, they can view the three most recent blog posts, which include:
+ - Featured Image: This can either be an image uploaded by the user when creating the post.
+ - Author: The person who authored the post.
+ - Title: The title of the post.
+ - Date Created: The date when the post was created.
+ - Likes: Displayed as a heart icon (Font Awesome: far fa-heart) followed by the number of likes received.
+ - Comments: Displayed as a comments icon (Font Awesome: far fa-comments) followed by the number of comments posted.
+<img width="1270" alt="body" src="https://github.com/fh255/solo-travel/assets/34744096/3b38664e-408f-445e-a709-4776affc0993">
+When users click on a post, they are redirected to the detailed page for that specific post.
+<details>
+<summary>Home page on mobile devices:</summary>
+<img width="454" alt="home_sm" src="https://github.com/fh255/solo-travel/assets/34744096/5efdae5b-25bf-4bd2-83a0-3a10d0a7b947">
+</details>
+
+#### Add post page:
+This feature is available only to registered users and can be accessed via the provided navbar link. On the "Add Post" page, users can share their traveling stories and add photos to their post content.
+
+<img width="593" alt="add_post" src="https://github.com/fh255/solo-travel/assets/34744096/29be7ba9-5846-4563-b186-35eebfb15870">
+
+To submit a post, the following fields are required:
+ - Title: A default post title is presented as the headline of the post. The user can choose to change this, but it must be unique.
+ - Content: The user is presented with a "What You See Is What You Get" (WYSIWYG) editor and can use the included toolbar to upload photos and change the content.
+ - Status: This field must be set to "Published." If not, the post will be saved as a draft.
+   
+When all fields are completed and the user clicks on "Post," their post will be automatically added to the list of posts, and the user will be redirected to the details page of their blog post.
+
+
+
+
+
+
+
+
+
+
 
 
