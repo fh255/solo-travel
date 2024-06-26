@@ -155,4 +155,17 @@ The navbar is fully responsive; on smaller devices, it collapses, and navigation
 <img width="485" alt="collapse" src="https://github.com/fh255/solo-travel/assets/34744096/1ae3f472-6388-4500-abee-3e8d1ec84319">
 </details>
 
+#### Home page:
+
+##### Home page - Hero section:
+At the top of the homepage, this section greets users with a background image of a person walking in a desert. On larger screens, the background image is set to "background-attachment: fixed," creating an appealing scrolling effect. A large text overlay reading "Solo Travel" features an included link that redirects users to the login page.
+<img width="1264" alt="Home" src="https://github.com/fh255/solo-travel/assets/34744096/968adfa9-701c-4cb6-b235-f0aa82e9a53c">
+
+<details>
+<summary>Hero section on mobile devices:</summary>
+
+![Hero Small]<img width="188" alt="Home-small" src="https://github.com/fh255/solo-travel/assets/34744096/da7dab4b-a230-404c-9464-40c17ab5891e">
+
+</details>
+
 
