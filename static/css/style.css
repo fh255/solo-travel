@@ -2,6 +2,13 @@
 body {
     background-color: #F9FAFC;
     font-family: 'Roboto', sans-serif;
+    padding-top: 56px; /* Adjust based on your navbar height */
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 70px; /* Adjust for mobile if necessary */
+    }
 }
 
 /* Hero Section */
@@ -120,6 +127,33 @@ body {
 
 .btn-signup:hover {
     background-color: #218838; /* darker green on hover */
+}
+
+/* Ensure all card images have the same size */
+.card-img-top {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/* Container to ensure consistent aspect ratio */
+.image-container {
+    width: 100%;
+    height: 250px; 
+    overflow: hidden; 
+}
+
+.new-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f6801f; 
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
 }
 
 /* Signup Page Styles */
