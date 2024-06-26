@@ -139,18 +139,20 @@ On the left-hand side of the navigation bar, users will find the Blog name "Solo
 Following the Blog name, navigation links to other pages of the site are displayed. Depending on the user's login status, additional links may be present.
   - Not logged in: Home, Add Post, Register, Login
 
-![Navbar Login](.jpg)
+<img width="619" alt="login" src="https://github.com/fh255/solo-travel/assets/34744096/1956b693-fd9b-4666-90ee-8bed872d869c">
+
 
   - Logged in: Home, Add Post, Logout
+<img width="507" alt="logout" src="https://github.com/fh255/solo-travel/assets/34744096/6a9656d7-6c46-4b32-aba1-7220fad47c06">
 
-![Navbar Logout](.jpg)
+
 
 The navbar is fully responsive; on smaller devices, it collapses, and navigation links are accessed through a "hamburger menu".
 
 <details>
 <summary>View collapsed navbar:</summary>
 
-![Navbar Collapse](.jpg)
+<img width="485" alt="collapse" src="https://github.com/fh255/solo-travel/assets/34744096/1ae3f472-6388-4500-abee-3e8d1ec84319">
 </details>
 
 
