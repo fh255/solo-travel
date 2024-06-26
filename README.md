@@ -193,6 +193,44 @@ To submit a post, the following fields are required:
    
 When all fields are completed and the user clicks on "Post," their post will be automatically added to the list of posts, and the user will be redirected to the details page of their blog post.
 
+#### Post detail page:
+When a user clicks on a blog post, they are brought to the Post Detail page. On this page, the user is shown the entire post, along with a commenting section below. The user's ability to interact with the content depends on their status.
+
+<img width="1265" alt="Post_details" src="https://github.com/fh255/solo-travel/assets/34744096/16853a3a-e1fd-45db-98eb-60cc4a2ac355">
+
+The following information will be presented to the user on the Post Detail page:
+
+- Featured Image: The image that the user uploaded when creating the post.
+ - Title: The post title.
+ - Author: The post author.
+ - Date Created: The date when the post was created.
+ - Content: The full post content.
+ - Number of Likes: A Font Awesome heart icon (fa-heart) followed by the number of likes.
+ - Number of Comments: A Font Awesome comments icon (fas fa-comments) followed by the number of comments.
+ - Comments: Comments are ordered by date in ascending order.
+
+Features Dependent on User Status:
+ - User Not Logged In: The comment form is not displayed. Instead, the user is presented with links to the Login and Register pages. Users must be logged in to leave a comment.
+   
+<img width="928" alt="Logout_comment" src="https://github.com/fh255/solo-travel/assets/34744096/124baa16-4bf1-4a7f-80ad-2cd350570427">
+
+ - Logged-In User Features:
+     - Commenting: The comment form is displayed, allowing the user to comment on the post. When the user clicks "Submit," the comment is automatically approved and added to the list of comments. This immediate approval encourages continued engagement without delays.
+     - The Font Awesome heart icon (fa-heart) changes color to indicate a liked post.
+     - The user can toggle their like status, liking or unliking the post.
+
+ <img width="1269" alt="Login_comment" src="https://github.com/fh255/solo-travel/assets/34744096/c9c32881-85f7-4344-a24f-28627964fbd5">
+
+ 
+
+
+
+
+
+
+
+
+
 
 
 
