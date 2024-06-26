@@ -6,7 +6,7 @@ The site allows users to share their travel stories, upload photos from their jo
 
 [View the live project here.](https://fishtales-mittnamnkenny.herokuapp.com/)
 
-![Mockup](documentation/amiresponsive.jpg)
+![Mockup](.jpg)
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux)
@@ -126,4 +126,31 @@ For more information: [View the Kanban Board](https://github.com/users/fh255/pro
  - User Story: Responsive:
       - As a Site User, I want to use the site seamlessly across desktops, laptops, tablets, and smartphones so that I can access all functionalities regardless of the device I'm using.
    
+## Features
+
+### Existing Features
+
+#### Navigation bar:
+
+The site's navigation bar is consistently visible across all pages, utilizing Bootstrap's **fixed-top** class to remain fixed at the top of the browser viewport as the user scrolls.
+
+On the left-hand side of the navigation bar, users will find the Blog name "Solo|Travel". Clicking on this name redirects users to the home page.
+
+Following the Blog name, navigation links to other pages of the site are displayed. Depending on the user's login status, additional links may be present.
+  - Not logged in: Home, Add Post, Register, Login
+
+![Navbar Login](.jpg)
+
+  - Logged in: Home, Add Post, Logout
+
+![Navbar Logout](.jpg)
+
+The navbar is fully responsive; on smaller devices, it collapses, and navigation links are accessed through a "hamburger menu".
+
+<details>
+<summary>View collapsed navbar:</summary>
+
+![Navbar Collapse](.jpg)
+</details>
+
 
