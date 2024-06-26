@@ -67,18 +67,19 @@ The site allows users to share their travel stories, upload photos from their jo
 ## User Experience (UX)
 
 ### Project Goals:
-The primary goal for this project is to create a fly fishing blog, that enables full CRUD functionality to register users so that they can Create, Read, Update and Delete both blog posts and comments directly on the site without any delays or intermediaries. The user should have full control over their own posts and that any changes made on the site are directly reflected to the user.
+The main objective of this project is to develop a travel blog that offers full CRUD functionality for registered users. This allows users to Create, Read, Update, and Delete their own blog posts and comments directly on the site, without any delays or intermediaries. Users will have complete control over their content, with all changes being immediately reflected on the site.
 
 ### Strategy:
-An Agile methodology was used to plan this project. This was implemented using a Kanban board in GitHub Project with linked Issues. To cover the goals of this project, a total of 5 Epics where created, which were then further developed into 32 User Stories, each with their own acceptance criterias and tasks to complete. Labels where then used to prioritize the importance of each User Story. 28 User Stories were completed working on this project.
+An Agile methodology was employed to plan and execute this project. The project management was facilitated through a Kanban board on GitHub Projects, where tasks were organized into three main columns: To Do, In Progress, and Done. This structure ensured a clear visual representation of the project workflow and helped maintain focus on task progression and completion.
 
-The following labels were used in this project and the distribution of user stories by label are:
+To achieve the project goals, the work was divided into 16 distinct parts, each representing a significant component or feature. These parts were tracked through the Kanban board, allowing for efficient prioritization and management of tasks.
 
-  - Must-Have: 16/32
-  - Should-Have: 7/32
-  - Could-Have: 8/32
-  - Probably-Won’t-Have: 1/32
+The tasks within the project were categorized using labels to indicate their priority and progress status. The labels and their distribution among the tasks were as follows:
 
-For more information: [View the Kanban Board here.](https://github.com/mittnamnkenny/fishtales/projects/1)
+  - To Do: Tasks that are yet to be started.
+  - In Progress: Tasks currently being worked on.
+  - Done: Tasks that have been completed.
+
+For more information: [View the Kanban Board here.]([https://github.com/users/fh255/projects/7/views/1])
 
 ### User stories:
