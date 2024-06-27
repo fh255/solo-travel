@@ -3,11 +3,18 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post, Image
+# from .models import Post, Image
 from .forms import CommentForm, PostForm, ImageForm
 from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+from django.views import View
+# from django.http import HttpResponseRedirect
+from .models import Post, Image, Comment
+# from .forms import CommentForm
+# from django.utils.text import slugify
+# from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class PostList(generic.ListView):
     model = Post
@@ -35,15 +42,18 @@ class AddPostView(LoginRequiredMixin, CreateView):
         if image_form.is_valid():
             form.instance.author = self.request.user
             form.instance.slug = slugify(form.instance.title)
-            response = super().form_valid(form)
-            for image in self.request.FILES.getlist('photo'):
+            self.object = form.save()
+            for image in self.request.FILES.getlist('image'):
                 Image.objects.create(post=self.object, image=image)
-            return response
+            return HttpResponseRedirect(self.get_success_url())
         else:
             return self.form_invalid(form)
 
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
+
+
+
 
 class PostDetail(View):
 
@@ -52,9 +62,7 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         images = post.images.all()
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        liked = post.likes.filter(id=self.request.user.id).exists()
 
         return render(
             request,
@@ -74,9 +82,7 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         images = post.images.all()
-        liked = False
-        if post.likes.filter(id=request.user.id).exists():
-            liked = True
+        liked = post.likes.filter(id=request.user.id).exists()
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -84,9 +90,12 @@ class PostDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
+            comment.approved = True  # Automatically approve the comment
             comment.save()
+            commented = True
+            comment_form = CommentForm()  # Reset form after successful submission
         else:
-            comment_form = CommentForm()
+            commented = False
 
         return render(
             request,
@@ -95,11 +104,14 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "images": images,
-                "commented": True,
+                "commented": commented,
                 "comment_form": comment_form,
                 "liked": liked
             },
         )
+
+
+
 
 class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post

@@ -34,9 +34,5 @@ class MultipleFileField(forms.FileField):
             result = single_file_clean(data, initial)
         return result
 
-class ImageForm(forms.ModelForm):
-    photo = MultipleFileField(label='Select files', required=False)
-
-    class Meta:
-        model = Image
-        fields = ['photo', ]
+class ImageForm(forms.Form):
+    image = MultipleFileField(label='Select files', required=False)
