@@ -4,22 +4,38 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="card">
+            <div class="add-post-card">
                 <div class="card-header">
                     <h3 class="card-title">Edit Post</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        {{ image_form.as_p }}
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            {{ form.title }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Content</label>
+                            {{ form.content }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            {{ form.status }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Add New Images</label>
+                            {{ image_form.image }}
+                        </div>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                     </form>
-                    <h2>Existing Images</h2>
-                    <div>
+                    <h3>Existing Images</h3>
+                    <div class="existing-images">
                         {% for image in object.images.all %}
-                            <img src="{{ image.image.url }}" alt="{{ image.caption }}" style="max-width: 200px; margin: 10px;">
-                            <p>{{ image.caption }}</p>
+                            <div class="image-wrapper">
+                                <img src="{{ image.image.url }}" alt="{{ image.caption }}" class="img-thumbnail">
+                                <p>{{ image.caption }}</p>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>

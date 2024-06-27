@@ -2,11 +2,11 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}{% trans "Logout" %}{% endblock %}
 
 {% block content %}
 
-<style>
+<!-- <style>
     .container {
         margin-top: 50px;
     }
@@ -63,20 +63,20 @@
     form {
         margin-top: 20px;
     }
-</style>
+</style> -->
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <h3>{% trans "Sign Out" %}</h3>
-                <p>{% trans 'Are you sure you want to sign out?' %}</p>
+                <h3>{% trans "Logout" %}</h3>
+                <p>{% trans 'Are you sure you want to Logout?' %}</p>
                 <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-signup" type="submit">{% trans 'Sign Out' %}</button>
+                    <button class="btn btn-signup" type="submit">{% trans 'Logout' %}</button>
                 </form>
             </div>
         </div>
