@@ -318,26 +318,93 @@ This project is hosted on Heroku with a database powered by Heroku PostgreSQL. C
 
 ### Colours
 
-To match the fly fishing theme of this project, teal was chosen as the main colour to use throughout the site. Teal or green is often used with fly fishing and will not be distracting to the user. Google Materialize color palette was used to select the hex colour codes.
-
-With focus on accessibility and contrast, the following colours were chosen:
-
-![Design Palette](documentation/design-palette.jpg)
-
-Other colours used:
-
-  - #F9FAFC - Off-white, Background colour
-  - #E84610 - Red, Like button
-  - #0F1413 - Dark, text colour
+#### Background Colors:
+ - #F9FAFC (General body background, .main-bg)
+ - #f8f9fa (Masthead background, .add-post-card background, .card background)
+ - #fff (card-header background, .signup-card background, .edit-post-card background)
+ - #445261 (Masthead text background, .dark-bg)
+ - #ffffff (login-card background, .signup-card background)
+ - rgba(0, 0, 0, 0.5) (Hero section overlay)
+ - rgba(0,0,0,0.1) (Shadow for .add-post-card, .img-thumbnail)
+ - rgba(0,0,0,0.15) (Shadow for .login-card, .signup-card, .edit-post-card)
+ - #23BBBB (Image flash background in .image-container)
+#### Text Colors:
+ - white (Masthead text color, .hero text, .footer text, .author text)
+ - #007bff (Primary button text, .btn-signup text, .signup-card .link text)
+ - #0056b3 (Primary button hover text)
+ - #003f7f (Primary button border hover text)
+ - #f6801f (New label background color)
+ - #343a40 (Card h3 color, .signup-card h3 color, .edit-post-card h3 color)
+ - #6c757d (Card p color, .signup-card p color, .card-text color)
+ - #2C3E50 (.brand color)
+ - #16A085 (.highlight color)
+ - #E74C3C (.accent color, .footer color)
+ - #445261 (.dark-bg background color)
+ - rgba(205, 239, 240, 0.974) (Alert background color)
+#### Border Colors:
+ - #dee2e6 (Masthead bottom border, .add-post-card border, card borders, .signup-card border, .edit-post-card border)
+ - #ccc (.login-card border)
+ - #445261 (.alert border-color)
 
 ### Typography
+Two types of fonts were used in this project:
 
-I have used font-family "Helvetica Neue", Helvetica, Arial, sans-serif for most of the text throughout the site. This is Bootstrap's default font, and this was chosen because it both looks good and is easy to read.
+ - General body font family: 'Roboto', sans-serif
+ - Brand font family: 'Lato', sans-serif
+### Imagery
 
-To make text stand out and catch the users attention, an outlined font is used on certain headings. 
-Cabin Sketch a Google Web Font, was chosen because it goes well with the theme of the website and is easy to read, with sans-serif as a fallback if Cabin Sketch should fail to load.
+All current images on the site and uploaded blog posts is downloaded from [Unsplash:](https://unsplash.com/de) .
 
-![Design Cabinsketch](documentation/design-cabinsketch.jpg)
+## Technologies Used
+### Languages Used:
+
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Python
+### Frameworks and Libraries Used:
+
+  - [Bootstrap:](https://getbootstrap.com/) Bootstrap CSS Framework used for styling and to build responsive web pages.
+  - [Cloudinary:](https://cloudinary.com/) Used to store all blog images and uploaded images.
+  - [Django:](https://www.djangoproject.com/) Main Python framework used in the development.
+  - [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html) Used for authentication and account registration.
+  - [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/) Used to simplify the rendering of Django forms.
+  - [dj_database_url:](https://pypi.org/project/dj-database-url/) Used to allow database urls to connect to the postgres database.
+  - [Gunicorn:](https://gunicorn.org/) Green Unicorn, used as the Web Server to run Django on Heroku.
+  - [psycopg2:](https://pypi.org/project/psycopg2/) Used PostgreSQL database adapter.
+  - [Summernote:](https://github.com/summernote/django-summernote) To provide a WYSIWYG editor for customizing new blog content and add images.
+
+### Software and Web Applications Used:
+
+  - [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
+  - [Chrome DevTools:](https://developer.chrome.com/docs/devtools/) Used to test the response on different screen sizes, debugging and to generate a Lighthouse report to analyze page load.
+  - [Font Awesome:](https://fontawesome.com/) Used throughout the site to add icons for aesthetic and UX purposes.
+  - [Git:](https://git-scm.com/) Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+  - [GitHub:](https://github.com/) GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
+  - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
+  - [Heroku PostgreSQL:](https://www.heroku.com/postgres) The database used for this application.
+  - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Hero image, Man fishing on river at daytime, Chris Sarsgard.
+  - [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/) Check your code for CSS validation.
+  - [Writer:](https://writer.com/grammar-checker/) Free Grammar Check.
+
+## Testing
+
+### Browser Testing
+
+I have tested that this application works using Macbook using the following browsers:
+
+  - Safari 
+  - Google 
+  - Firefox
+### Responsiveness
+
+Chrome developer tool have been used to check the responsiveness.
+
+  - I have tested that this application works on different screen sizes from iPhone SE (375px wide) and  large screens (1200px wide).
+All tests confirmed that the application functions correctly across these browsers, devices, and screen sizes.
+
+
 
 
 
