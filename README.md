@@ -184,7 +184,7 @@ When users click on a post, they are redirected to the detailed page for that sp
 #### Add post page:
 This feature is available only to registered users and can be accessed via the provided navbar link. On the "Add Post" page, users can share their traveling stories and add photos to their post content.
 
-<img width="593" alt="add_post" src="https://github.com/fh255/solo-travel/assets/34744096/29be7ba9-5846-4563-b186-35eebfb15870">
+<img width="555" alt="Add_post" src="https://github.com/fh255/solo-travel/assets/34744096/5777313c-09ce-4a2d-8db9-ff78ce41b823">
 
 To submit a post, the following fields are required:
  - Title: A default post title is presented as the headline of the post. The user can choose to change this, but it must be unique.
@@ -224,7 +224,7 @@ Features Dependent on User Status:
  #### Post edit page:
  Authors can update their blog posts via the dedicated Post Update page, accessible from the "Update this post" link on the Post Detail page. This feature grants authors full control over their published content, allowing them to effortlessly edit and correct any information directly. All fields are conveniently pre-populated, ensuring a seamless editing experience to maintain accuracy and relevance.
 
-# picture
+<img width="581" alt="Edit_post" src="https://github.com/fh255/solo-travel/assets/34744096/6cc5e63d-e292-4a99-9b13-6ed16fe38b98">
 
 
  #### Delete Post Feature:
@@ -232,8 +232,115 @@ Features Dependent on User Status:
 
  <img width="457" alt="Delete Post" src="https://github.com/fh255/solo-travel/assets/34744096/4b115ada-5a10-4bcd-93e6-17f5e5d462c3">
 
+#### Sign Up Page:
+To engage with the site, users must sign up and log in. Unregistered users can access the Sign up page through various methods:
 
+ - Via the link in the navigation bar.
+ - Using the link provided on the Login page
+Creating a new account is straightforward. Users need to provide the following information:
+
+ - Username - must be unique
+ - Email - needed
+ - Password - must be entered twice
  
+<img width="375" alt="Sign up" src="https://github.com/fh255/solo-travel/assets/34744096/cf4ed8e1-db2f-4504-9a46-3e3e8a1b2d17">
+
+When all fields are completed and the user clicks on "Register," a new account is automatically created, and the user is redirected to the Home page.
+
+#### Login Page
+For full CRUD functionality on posts and comments, or the ability to like/unlike a post, a user is required to log in to the site. The Login page can be accessed via:
+
+- **Start Your Journey** link, in the Hero section on the Home page
+- The link in the navigation bar
+- The link on the Register page
+- Using the link provided on the Signup page
+Provided that a user is registered on the site, the login process is very quick. The user needs to enter the following information:
+
+ - Valid username
+ - Correct password
+ - The user is able to log in directly using their Gmail account.
+
+<img width="334" alt="Login" src="https://github.com/fh255/solo-travel/assets/34744096/5247ed32-278a-46f3-9310-41ddbe29b801">
+
+#### Logout Page:
+The Logout page is accessible via the navbar link available when a user is logged in. Upon clicking "Logout," the user will be instantly logged out and redirected to the Home page.
+
+<img width="435" alt="Logout" src="https://github.com/fh255/solo-travel/assets/34744096/49f2a4a8-9547-42eb-ace0-4d27daf3f0e2">
+
+#### Django Admin Page:
+A superuser account was created to manage the blog content on the site, granting administrative privileges. The Admin panel can be accessed by logging in at the /admin URL with the superuser credentials. From there, the superuser can delete specific posts, comments, or users, essential for maintaining the blog and ensuring unwanted content is removed.
+
+<img width="440" alt="Admin" src="https://github.com/fh255/solo-travel/assets/34744096/ba624da1-7e58-44a3-a43a-f2585fe01818">
+
+Additionally, the admin panel offers further functionality to the superuser, such as creating post drafts that can be published later.
+
+#### System Messages:
+
+Throughout the site, system or flash messages provide feedback to users upon completing certain actions. These messages appear at the top of the screen and automatically disappear after a short period.
+
+<img width="582" alt="Massgae_alert" src="https://github.com/fh255/solo-travel/assets/34744096/0b711165-011a-40af-aa48-57d31e21603b">
+
+#### Footer
+
+The footer of our webpage showcases a tranquil, forested path, symbolizing our journey of discovery and growth. Connect with us on social media platforms including Facebook, YouTube, Instagram, and Twitter for solo travelers.
+
+<img width="490" alt="footer-sm" src="https://github.com/fh255/solo-travel/assets/34744096/c730fbce-20c6-465a-aa2c-dec767e5b2fd">
+
+## Design
+
+### Data Model
+This project is hosted on Heroku with a database powered by Heroku PostgreSQL. Cloudinary serves as the storage solution for all blog images. In addition to the default Django User model, four custom models were created: User, Image, Post and Comment.
+
+<details>
+<summary>Entity Relationship Diagram - User</summary>
+ 
+<img width="739" alt="user" src="https://github.com/fh255/solo-travel/assets/34744096/694f23ff-d85e-4970-85e6-b94e96cd1756">
+
+</details>
+<details>
+<summary>Entity Relationship Diagram - Image</summary>
+ 
+<img width="576" alt="Image" src="https://github.com/fh255/solo-travel/assets/34744096/140943cf-e98c-40d7-b109-1b7a484587ad">
+
+</details>
+<details>
+<summary>Entity Relationship Diagram - Post</summary>
+ 
+<img width="594" alt="Post" src="https://github.com/fh255/solo-travel/assets/34744096/274c5950-2a94-452d-a07f-69aa535e1695">
+
+</details>
+<details>
+<summary>Entity Relationship Diagram - Comment</summary>
+ 
+<img width="581" alt="Comment" src="https://github.com/fh255/solo-travel/assets/34744096/9a333834-f61d-4de1-8435-36c180bad2cd">
+
+</details>
+
+### Colours
+
+To match the fly fishing theme of this project, teal was chosen as the main colour to use throughout the site. Teal or green is often used with fly fishing and will not be distracting to the user. Google Materialize color palette was used to select the hex colour codes.
+
+With focus on accessibility and contrast, the following colours were chosen:
+
+![Design Palette](documentation/design-palette.jpg)
+
+Other colours used:
+
+  - #F9FAFC - Off-white, Background colour
+  - #E84610 - Red, Like button
+  - #0F1413 - Dark, text colour
+
+### Typography
+
+I have used font-family "Helvetica Neue", Helvetica, Arial, sans-serif for most of the text throughout the site. This is Bootstrap's default font, and this was chosen because it both looks good and is easy to read.
+
+To make text stand out and catch the users attention, an outlined font is used on certain headings. 
+Cabin Sketch a Google Web Font, was chosen because it goes well with the theme of the website and is easy to read, with sans-serif as a fallback if Cabin Sketch should fail to load.
+
+![Design Cabinsketch](documentation/design-cabinsketch.jpg)
+
+
+
 
 
 
