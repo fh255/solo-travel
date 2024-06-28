@@ -17,13 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-    '8000-fh255-solotravel-02ke1lq6ehy.ws-eu114.gitpod.io',
-    'future_travel.herokuapp.com',
-    'localhost'
-]
+ALLOWED_HOSTS = ["future-travel2024-0cad95f48932.herokuapp.com"]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
