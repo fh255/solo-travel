@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["future-travel2024-0cad95f48932.herokuapp.com"]
+ALLOWED_HOSTS = ['future-travel2024-0cad95f48932.herokuapp.com']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
