@@ -4,9 +4,9 @@ This is my fourth milestone project with Code Institute. Solo Travel is a Django
 
 The site allows users to share their travel stories, upload photos from their journeys, and interact with other posts by commenting, liking, and disliking the liked comments.
 
-[View the live project here.](https://fishtales-mittnamnkenny.herokuapp.com/)
+[View the live project here.](https://future-travel2024-0cad95f48932.herokuapp.com/)
 
-![Mockup](.jpg)
+<img width="934" alt="Mock up" src="https://github.com/fh255/solo-travel/assets/34744096/b412e0ca-aee8-416a-ab09-f772945ee9f1">
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux)
@@ -19,21 +19,15 @@ The site allows users to share their travel stories, upload photos from their jo
     * [Home page:](#home-page)
     * [Add post page:](#add-post-page)
     * [Post edit page:](#post-edit-page)
-    * [Post update page:](#post-update-page)
     * [Delete post :](#delete-post)
-    * [Register page:](#register-page)
+    * [Register page:](#sign-up-page)
     * [Login page:](#login-page)
     * [Logout page:](#logout-page)
     * [Django Admin page:](#django-admin-page)
     * [System messages:](#system-messages)
     * [Footer:](#footer)
-    * [Additional features:](#additional-features)
-    * [Meta Data:](#meta-data)
-  * [Features to Implement in the future](#features-to-implement-in-the-future)
 * [Design](#design)
-  * [Wireframes](#wireframes)
   * [Data Model](#data-model)
-  * [Site map](#site-map)
   * [Colours](#colours)
   * [Typography](#typography)
   * [Imagery](#imagery)
@@ -217,9 +211,9 @@ Features Dependent on User Status:
  - Logged-In User Features:
      - Commenting: The comment form is displayed, allowing the user to comment on the post. When the user clicks "Submit," the comment is automatically approved and added to the list of comments. This immediate approval encourages continued engagement without delays.
      - The Font Awesome heart icon (fa-heart) changes color to indicate a liked post.
-     - The user can toggle their like status, liking or unliking the post.
+     - The user can liking or unliking the post.
 
- <img width="1269" alt="Login_comment" src="https://github.com/fh255/solo-travel/assets/34744096/c9c32881-85f7-4344-a24f-28627964fbd5">
+ <img width="1150" alt="edit_comment" src="https://github.com/fh255/solo-travel/assets/34744096/dc129e74-de0d-4533-bf36-454e41d9f724">
 
  #### Post edit page:
  Authors can update their blog posts via the dedicated Post Update page, accessible from the "Update this post" link on the Post Detail page. This feature grants authors full control over their published content, allowing them to effortlessly edit and correct any information directly. All fields are conveniently pre-populated, ensuring a seamless editing experience to maintain accuracy and relevance.
@@ -227,7 +221,7 @@ Features Dependent on User Status:
 <img width="581" alt="Edit_post" src="https://github.com/fh255/solo-travel/assets/34744096/6cc5e63d-e292-4a99-9b13-6ed16fe38b98">
 
 
- #### Delete Post Feature:
+ #### Delete Post:
  When a user chooses to delete their post, they will need to confirm their action. A modal window will be displayed, providing the user with options to either Delete or Cancel the deletion process. This ensures that users can proceed with confidence when removing their posts, while also offering a safeguard against accidental deletions.
 
  <img width="457" alt="Delete Post" src="https://github.com/fh255/solo-travel/assets/34744096/4b115ada-5a10-4bcd-93e6-17f5e5d462c3">
@@ -397,6 +391,7 @@ I have tested that this application works using Macbook using the following brow
   - Safari 
   - Google 
   - Firefox
+
 ### Responsiveness
 
 Chrome developer tool have been used to check the responsiveness.
@@ -404,7 +399,150 @@ Chrome developer tool have been used to check the responsiveness.
   - I have tested that this application works on different screen sizes from iPhone SE (375px wide) and  large screens (1200px wide).
 All tests confirmed that the application functions correctly across these browsers, devices, and screen sizes.
 
+### Validator Testing
 
+#### W3C Markup Validator:
+
+The HTML on all pages of the project was validated using the W3C Markup Validator to ensure there were no syntax errors. To validate the HTML files, all Django template tags were removed manually, and the HTML code was copied and inserted into the base template.
+
+Index page:
+
+<img width="1214" alt="home_testing" src="https://github.com/fh255/solo-travel/assets/34744096/9a36c28c-f6a5-4c18-ba74-ed382acd99f2">
+
+Add Post page:
+
+<img width="1205" alt="add_post_test" src="https://github.com/fh255/solo-travel/assets/34744096/efce770b-1fe5-46ea-82f7-68455d0817b2">
+
+ Edit Post page:
+ 
+<img width="1208" alt="Edit Post test" src="https://github.com/fh255/solo-travel/assets/34744096/f9d90ded-0238-45d9-bc33-26d2cff4ecff">
+
+#### W3C CSS Validator:
+
+The W3C CSS Validator were used to validate the CSS to ensure there were no errors .
+<img width="1205" alt="CSS" src="https://github.com/fh255/solo-travel/assets/34744096/4a1b2032-d5bf-4cfb-93b6-af49d3575a3f">
+
+For more information: [View Full CSS Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/w3ccssvalidatorfull.pdf)
+
+#### JSHint:
+
+JSHint was used to validate the JavaScript code, and no errors were found.
+
+<img width="991" alt="JS" src="https://github.com/fh255/solo-travel/assets/34744096/a34937d5-c83c-4f1c-961e-6a62019dd238">
+
+#### PEP8 Online:
+
+PEP8 Online linter (Python validator) The code passed without any errors on all files tested:
+
+  - admin.py
+
+<img width="998" alt="admin" src="https://github.com/fh255/solo-travel/assets/34744096/24cc151a-54d8-458d-8c5b-315d3217747b">
+
+  - forms.py
+
+<img width="964" alt="forms" src="https://github.com/fh255/solo-travel/assets/34744096/9ef356ce-eaa6-4bb7-a8bf-69493f96bcd5">
+
+  - models.py
+
+<img width="973" alt="models" src="https://github.com/fh255/solo-travel/assets/34744096/850ff9b3-5e66-4ba7-8c48-a154e577325c">
+
+  - urls.py(blog)
+
+<img width="988" alt="blog:urls" src="https://github.com/fh255/solo-travel/assets/34744096/43101c73-72fc-4f12-918d-60f11f6f6293">
+
+  - views.py
+<img width="970" alt="views" src="https://github.com/fh255/solo-travel/assets/34744096/924a4336-3954-4b8c-a99e-3c2b687a7363">
+
+  - settings.py
+
+<img width="1057" alt="settings" src="https://github.com/fh255/solo-travel/assets/34744096/5355b480-6eac-465d-9b2c-7bff91a55738">
+
+  - manage.py
+
+<img width="979" alt="manage" src="https://github.com/fh255/solo-travel/assets/34744096/3def5021-9301-44f1-9e78-67c4169cd2be">
+
+#### Lighthouse:
+
+I have verified that the chosen colors and fonts are easy to read and accessible by running them through Lighthouse in Chrome Developer Tools on the following pages:
+
+Home page:
+
+<img width="799" alt="lightHouse home" src="https://github.com/fh255/solo-travel/assets/34744096/3fc09e95-c251-4e6a-b000-9d261b08b8fa">
+
+Post Detail page:
+
+<img width="1280" alt="light house post" src="https://github.com/fh255/solo-travel/assets/34744096/6d536f9e-1d51-4993-b550-f983c404df3d">
+
+### Solved bugs
+
+  - Django test error -During testing of my Python files, I encountered and resolved errors in both views.py and settings.py.
+  - Am I responsive? - I had to install the Google Chrome extension, Ignore X-Frame headers to generate mockup images using Am I responsive. Thanks to Code Institute’s Slack Channel, this was solved.
+  - Throughout my coding journey, I encountered numerous challenges. Thanks to the constant availability of tutor assistance during my project, I was able to overcome them effectively.
+
+### Known bugs
+
+  - Currently no known bugs.
+
+## Deployment
+The application was successfully deployed to Heroku with the following steps:
+ - Login to Heroku dashboard to view installed apps.
+ - Click on **New** => **Create new app**.
+ - Choose a unique name for your application and select your region.
+ - Click on Create app.
+ - Once your application is created, navigate to the Settings tab => click on Reveal Config Vars.
+ - Copy the DATABASE_URL value to the clipboard.
+ - In GitPod, create a new env.py file at the top level directory.
+ - In the env.py file
+    - Set environment variables: **os.environ["DATABASE_URL"]** = **"Paste in Heroku DATABASE_URL Link"**
+    - Add in secret key: **os.environ[”SECRET_KEY"]** = **"Generate your own randomSecretKey”**
+ - In Heroku, navigate to the Settings tab => click on Reveal Config Vars.
+ - Add SECRET_KEY to Config Vars using the randomSecretKey you generated.
+ - In the settings.py file:
+    - Replace the insecure secret key with: **SECRET_KEY = os.environ.get("SECRET_KEY")**
+    - Update to use the DATABASE_URL: import dj_database_url and DATABASES['default'] = dj_database_url.parse(os.environ.get("DATABASE_URL"))
+- Save all files and run migrations: python3 manage.py migrate
+- Log in to Cloudinary and navigate to the Cloudinary Dashboard.
+- Copy your CLOUDINARY_URL API Environment Variable to the clipboard.
+- In the env.py file
+    - Add Cloudinary **URL: os.environ["CLOUDINARY_URL"] = "cloudinary://paste in your API Environment Variable"**
+  - In Heroku, go to the Settings tab => click on Reveal Config Vars.
+  - Add 'CLOUDINARY_URL' to Config Vars with the API Environment Variable value.
+  - Add 'DISABLE_COLLECTSTATIC' = 1 to Heroku Config Vars (temporary, remove before final deployment).
+  - In the settings.py file:
+    - Add Cloudinary Libraries to installed apps (order matters): **'cloudinary_storage', 'django.contrib.staticfiles', 'cloudinary'**
+    - Add the following code below STATIC_URL = ’/static/' to use Cloudinary to store media and static files:
+      - STATICFILES_STORAGE = ’cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+      - STATICFILES_DIRS = [os.path.join(BASE_DIR, ’static')]
+      - STATIC_ROOT = os.path.join(BASE_DIR, ’staticfiles')
+      - MEDIA_URL = '/media/'
+      - DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    - Link file to the templates directory in Heroku: **TEMPLATES_DIR = os.path.join(BASE_DIR, ’templates')**
+    - Change the templates directory to: TEMPLATES_DIR: 'DIRS': [TEMPLATES_DIR],
+    - Add Heroku Hostname to ALLOWED_HOSTS: ALLOWED_HOSTS = [”Your_Project_name.herokuapp.com”, ”localhost”]
+  - Create 3 new folders on top level directory: media, static, templates
+  - Create a Procfile on the top level directory
+  - In the Procfile file:
+    - Add the following code with your project name: web: gunicorn PROJ_NAME.wsgi
+  - In the terminal: Add, Commit and Push.
+  - In Heroku navigate to the Deploy tab => click on Deploy Branch.
+  - When build process is finished click on Open App to visit the live site.
+
+## Credits
+
+  - [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
+  - [Bootstrap documentation:](https://getbootstrap.com/docs/4.6/getting-started/introduction/) Bootstrap documentation used for styling and to build responsive web pages.
+  - [Code Institute:](https://codeinstitute.net/) Walkthrough modules in Full Stack Frameworks.
+  - [Code Institute Slack Community:](https://app.slack.com/) Slack community for troubleshooting and FAQ.
+  - [Code Institute Tutor Support:](https://app.slack.com/) For help and support.
+  - [Codemy Youtube:](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) Inspiration for creating A simple blog with Python and Django.
+  - [Django documentation:](https://docs.djangoproject.com/en/4.1/) Everything you need to know about Django.
+  - [Stack Overflow:](https://stackoverflow.com) For troubleshooting and FAQ.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Man fishing on river at daytime photo, Chris Sarsgard.
+  - [W3Schools:](https://www.w3schools.com) Online Web Tutorials.
+
+### Acknowledgements
+
+  - Special thanks to the tutor assistance and my mentor at Code Institute, Brian Macharia, for their invaluable support with code reviews, assistance, and feedback. It has been immensely appreciated!
 
 
 
