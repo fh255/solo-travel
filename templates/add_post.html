@@ -12,19 +12,19 @@
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
+                            <label for="id_title" class="form-label">Title</label>
                             {{ form.title }}
                         </div>
                         <div class="mb-3">
-                            <label for="content" class="form-label">Content</label>
+                            <label for="id_content" class="form-label">Content</label>
                             {{ form.content }}
                         </div>
                         <div class="mb-3">
-                            <label for="status" class="form-label">Status</label>
+                            <label for="id_status" class="form-label">Status</label>
                             {{ form.status }}
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label">Image</label>
+                            <label for="id_image" class="form-label">Image</label>
                             {{ image_form.image }}
                         </div>
                         <button type="submit" class="btn btn-primary">Post</button>

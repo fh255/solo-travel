@@ -3,25 +3,21 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-# from .models import Post, Image
+from django.core.paginator import Paginator
 from .forms import CommentForm, PostForm, ImageForm
 from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
-from django.views import View
-# from django.http import HttpResponseRedirect
 from .models import Post, Image, Comment
-# from .forms import CommentForm
-# from django.utils.text import slugify
-# from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')[:3]
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     context_object_name = 'post_list'
-    paginate_by = 6
+    paginate_by = 3  # Show 3 posts per page
+
 
 class AddPostView(LoginRequiredMixin, CreateView):
     model = Post
@@ -51,8 +47,6 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
-
-
 
 
 class PostDetail(View):
@@ -90,10 +84,10 @@ class PostDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = True  # Automatically approve the comment
+            comment.approved = True
             comment.save()
             commented = True
-            comment_form = CommentForm()  # Reset form after successful submission
+            comment_form = CommentForm()
         else:
             commented = False
 
@@ -109,8 +103,6 @@ class PostDetail(View):
                 "liked": liked
             },
         )
-
-
 
 
 class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -144,6 +136,7 @@ class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
+
 class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'delete_post.html'
@@ -152,6 +145,7 @@ class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author or self.request.user.is_superuser
+
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
