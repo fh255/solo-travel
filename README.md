@@ -17,10 +17,11 @@ The site allows users to share their travel stories, upload photos from their jo
   * [Existing Features](#existing-features)
     * [Navigation bar:](#navigation-bar)
     * [Home page:](#home-page)
+    * [Post detail page:](#post-detail-page)
     * [Add post page:](#add-post-page)
     * [Post edit page:](#post-edit-page)
     * [Delete post :](#delete-post)
-    * [Register page:](#sign-up-page)
+    * [Sign_up page:](#sign-up-page)
     * [Login page:](#login-page)
     * [Logout page:](#logout-page)
     * [Django Admin page:](#django-admin-page)
@@ -371,7 +372,7 @@ All current images on the site and uploaded blog posts is downloaded from [Unspl
   - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
   - [Heroku PostgreSQL:](https://www.heroku.com/postgres) The database used for this application.
   - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
-  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Hero image, Man fishing on river at daytime, Chris Sarsgard.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) All Images were downloaded from Unsplash.
   - [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/) Check your code for CSS validation.
   - [Writer:](https://writer.com/grammar-checker/) Free Grammar Check.
 
@@ -414,8 +415,6 @@ Add Post page:
 
 The W3C CSS Validator were used to validate the CSS to ensure there were no errors .
 <img width="1205" alt="CSS" src="https://github.com/fh255/solo-travel/assets/34744096/4a1b2032-d5bf-4cfb-93b6-af49d3575a3f">
-
-For more information: [View Full CSS Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/w3ccssvalidatorfull.pdf)
 
 #### JSHint:
 
@@ -464,7 +463,7 @@ Home page:
 
 Post Detail page:
 
-<img width="1280" alt="light house post" src="https://github.com/fh255/solo-travel/assets/34744096/6d536f9e-1d51-4993-b550-f983c404df3d">
+<img width="1280" alt="Light house post" src="https://github.com/fh255/solo-travel/assets/34744096/02f16310-5d59-4cda-b500-e8d096b4c47a">
 
 ### Solved bugs
 
@@ -527,10 +526,10 @@ The application was successfully deployed to Heroku with the following steps:
   - [Code Institute:](https://codeinstitute.net/) Walkthrough modules in Full Stack Frameworks.
   - [Code Institute Slack Community:](https://app.slack.com/) Slack community for troubleshooting and FAQ.
   - [Code Institute Tutor Support:](https://app.slack.com/) For help and support.
-  - [Codemy Youtube:](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) Inspiration for creating A simple blog with Python and Django.
+  - [Codemy Youtube:](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) Inspiration for creating A simple blog with Django.
   - [Django documentation:](https://docs.djangoproject.com/en/4.1/) Everything you need to know about Django.
   - [Stack Overflow:](https://stackoverflow.com) For troubleshooting and FAQ.
-  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Man fishing on river at daytime photo, Chris Sarsgard.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) All images were downloaded from Unplash.
   - [W3Schools:](https://www.w3schools.com) Online Web Tutorials.
 
 ### Acknowledgements
