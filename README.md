@@ -58,7 +58,7 @@ The main objective of this project is to develop a travel blog that offers full 
 ### Strategy:
 An Agile methodology was employed to plan and execute this project. The project management was facilitated through a Kanban board on GitHub Projects, where tasks were organized into three main columns: To Do, In Progress, and Done. This structure ensured a clear visual representation of the project workflow and helped maintain focus on task progression and completion.
 
-To achieve the project goals, the work was divided into 22 distinct parts, each representing a significant component or feature. These parts were tracked through the Kanban board, allowing for efficient prioritization and management of tasks.
+To achieve the project goals, the work was divided into 21 distinct parts, each representing a significant component or feature. These parts were tracked through the Kanban board, allowing for efficient prioritization and management of tasks.
 
 The tasks within the project were categorized using labels to indicate their priority and progress status. The labels and their distribution among the tasks were as follows:
 
