@@ -17,10 +17,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://future-travel2024-0cad95f48932.herokuapp.com/'
+     '8000-fh255-solotravel-b5hftqe91wr.ws.codeinstitute-ide.net',
+    'future_travel.herokuapp.com',
+    'localhost'
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
