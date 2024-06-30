@@ -407,7 +407,7 @@ body {
 
 /* Footer styles */
 .footer {
-    background-image: url('../images/forest-pathway.jpg');
+    background-image: url('/static/images/forest-pathway.jpg');
     background-size: cover;
     background-position: center;
     padding: 40px 0;
