@@ -2,45 +2,46 @@
 body {
     background-color: #F9FAFC;
     font-family: 'Roboto', sans-serif;
-    padding-top: 70px; /* Adjust based on your navbar height */
+    padding-top: 60px;  
 }
 
+/* Adjust for mobile if necessary */
 @media (max-width: 767px) {
     body {
-        padding-top: 70px; /* Adjust for mobile if necessary */
+        padding-top: 60px; 
     }
 }
 
 /* Navbar styles */
 .navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 1.2rem;
+    padding-top: 15px;  
+    padding-bottom: 15px;  
+    font-size: 1rem;  
 }
 
 .navbar-brand {
-    font-size: 2rem; /* Increase the brand font size */
-    padding-right: 20px;
+    font-size: 1.8rem;  
+    padding-right: 15px; 
 }
 
 .navbar-nav .nav-link {
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 1.2rem; /* Increase the nav link font size */
+    padding-right: 15px;  
+    padding-left: 15px;  
+    font-size: 1rem;  
 }
 
 @media (max-width: 767px) {
     .navbar {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 10px;  
+        padding-bottom: 10px; 
     }
     .navbar-brand {
-        font-size: 1.5rem;
+        font-size: 1.4rem; 
     }
     .navbar-nav .nav-link {
-        padding-right: 15px;
-        padding-left: 15px;
-        font-size: 1.1rem;
+        padding-right: 10px;  
+        padding-left: 10px;  
+        font-size: 0.9rem;  
     }
 }
 
@@ -48,7 +49,7 @@ body {
 .post-header-image {
     width: 100%;
     overflow: hidden;
-    height: 400px; /* Set the desired height */
+    height: 400px; 
 }
 
 .post-header-image img {
@@ -85,7 +86,7 @@ body {
 .hero {
     background-size: cover;
     background-position: center center;
-    height: 90vh; /* Increase the height to make the hero section larger */
+    height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -418,10 +419,10 @@ body {
     margin: 0;
 }
 
-.footer a:hover {
+/* .footer a:hover {
     color: #E74C3C; /* Change the color on hover */
     text-decoration: none;
-}
+} */
 
 .footer i {
     font-size: 1.5rem;
@@ -450,5 +451,5 @@ body {
 }
 
 .shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    box-shadow: 0
 }
