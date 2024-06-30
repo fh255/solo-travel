@@ -28,7 +28,6 @@ The site allows users to share their travel stories, upload photos from their jo
     * [System messages:](#system-messages)
     * [Footer:](#footer)
 * [Design](#design)
-  * [Data Model](#data-model)
   * [Colours](#colours)
   * [Typography](#typography)
   * [Imagery](#imagery)
@@ -276,34 +275,6 @@ The footer of our webpage showcases a tranquil, forested path, symbolizing our j
 
 ## Design
 
-### Data Model
-This project is hosted on Heroku with a database powered by Heroku PostgreSQL. Cloudinary serves as the storage solution for all blog images. In addition to the default Django User model, four custom models were created: User, Image, Post and Comment.
-
-<details>
-<summary>Entity Relationship Diagram - User</summary>
- 
-<img width="739" alt="user" src="https://github.com/fh255/solo-travel/assets/34744096/694f23ff-d85e-4970-85e6-b94e96cd1756">
-
-</details>
-<details>
-<summary>Entity Relationship Diagram - Image</summary>
- 
-<img width="576" alt="Image" src="https://github.com/fh255/solo-travel/assets/34744096/140943cf-e98c-40d7-b109-1b7a484587ad">
-
-</details>
-<details>
-<summary>Entity Relationship Diagram - Post</summary>
- 
-<img width="594" alt="Post" src="https://github.com/fh255/solo-travel/assets/34744096/274c5950-2a94-452d-a07f-69aa535e1695">
-
-</details>
-<details>
-<summary>Entity Relationship Diagram - Comment</summary>
- 
-<img width="581" alt="Comment" src="https://github.com/fh255/solo-travel/assets/34744096/9a333834-f61d-4de1-8435-36c180bad2cd">
-
-</details>
-
 ### Colours
 
 #### Background Colors:
@@ -370,8 +341,7 @@ All current images on the site and uploaded blog posts is downloaded from [Unspl
   - [Git:](https://git-scm.com/) Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
   - [GitHub:](https://github.com/) GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
   - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
-  - [Heroku PostgreSQL:](https://www.heroku.com/postgres) The database used for this application.
-  - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
+  - [HTML Validator:](https://validator.w3.org/) Check the code for HTML validation.
   - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) All Images were downloaded from Unsplash.
   - [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/) Check your code for CSS validation.
   - [Writer:](https://writer.com/grammar-checker/) Free Grammar Check.
@@ -381,7 +351,6 @@ All current images on the site and uploaded blog posts is downloaded from [Unspl
 ### Browser Testing
 
 I have tested that this application works using Macbook using the following browsers:
-
   - Safari 
   - Google 
   - Firefox
@@ -463,13 +432,13 @@ Home page:
 
 Post Detail page:
 
-<img width="1280" alt="Light house post" src="https://github.com/fh255/solo-travel/assets/34744096/02f16310-5d59-4cda-b500-e8d096b4c47a">
+<img width="787" alt="Post details LH" src="https://github.com/fh255/solo-travel/assets/34744096/567dccfc-2187-4ee8-99b2-a792555d661b">
 
 ### Solved bugs
 
   - Django test error -During testing of my Python files, I encountered and resolved errors in both views.py and settings.py.
   - Am I responsive? - I had to install the Google Chrome extension, Ignore X-Frame headers to generate mockup images using Am I responsive. Thanks to Code Institute’s Slack Channel, this was solved.
-  - Throughout my coding journey, I encountered numerous challenges. Thanks to the constant availability of tutor assistance during my project, I was able to overcome them effectively.
+  - Throughout my coding journey, I encountered numerous challenges and bugs. Thanks to the constant availability of tutor assistance during my project, I was able to overcome them effectively.
 
 ### Known bugs
 
