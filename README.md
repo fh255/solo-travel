@@ -439,6 +439,7 @@ Post Detail page:
   - Django test error -During testing of my Python files, I encountered and resolved errors in both views.py and settings.py.
   - Am I responsive? - I had to install the Google Chrome extension, Ignore X-Frame headers to generate mockup images using Am I responsive. Thanks to Code Institute’s Slack Channel, this was solved.
   - Throughout my coding journey, I encountered numerous challenges and bugs. Thanks to the constant availability of tutor assistance during my project, I was able to overcome them effectively.
+  - After finishing my project, I deployed it on Heroku. Initially, I was unable to see my footer. With the help of my tutor Rebecca, I resolved the bug. I copied the image link from the cloud and pasted it into the CSS file's footer section.
 
 ### Known bugs
 
