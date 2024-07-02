@@ -30,6 +30,7 @@ The site allows users to share their travel stories, upload photos from their jo
 * [Design](#design)
   * [Colours](#colours)
   * [Typography](#typography)
+  * [Entity Relationship diagrams for DBMS](#entity-relationship-diagrams-for-DBMS)
   * [Imagery](#imagery)
 * [Technologies Used](#technologies-used)
   * [Languages Used:](#languages-used)
@@ -310,6 +311,56 @@ Two types of fonts were used in this project:
 
  - General body font family: 'Roboto', sans-serif
  - Brand font family: 'Lato', sans-serif
+
+### Entity-Relationship diagrams for DBMS:
+The following Entity-Relationship Diagram (ERD) provides a visual representation of the database schema used in this project. The diagram illustrates the entities, their attributes, and the relationships between them. This helps in understanding the structure of the database and how different entities interact with each other.
+
+#### User
+ - Primary Key: id
+ - Attributes:
+   - username: The username of the user.
+   - password: The password of the user.
+   - email: The email address of the user.
+ - Relationships:
+   - Many-to-Many with Post: A user can like multiple posts, and a post can be liked by multiple users.
+#### Post
+ - Primary Key: id
+ - Attributes:
+   - title: The title of the post.
+   - slug: A unique slug for the post.
+   - author: The author of the post (Foreign Key referencing User).
+   - featured_image: The featured image of the post.
+   - excerpt: A short excerpt of the post.
+   - updated_on: The date and time when the post was last updated.
+   - content: The content of the post.
+   - created_on: The date and time when the post was created.
+   - status: The status of the post (e.g., Draft, Published).
+ - Relationships:
+   - One-to-Many with Comment: A post can have multiple comments.
+   - One-to-Many with Image: A post can have multiple images.
+   - Many-to-Many with User: A post can be liked by multiple users, and a user can like multiple posts.
+#### Comment
+ - Primary Key: id
+ - Attributes:
+   - post: The post to which the comment belongs (Foreign Key referencing Post).
+   - name: The name of the commenter.
+   - email: The email address of the commenter.
+   - body: The body of the comment.
+   - created_on: The date and time when the comment was created.
+   - approved: Whether the comment is approved or not.
+ - Relationships:
+   - One-to-Many with Post: Each comment belongs to a specific post.
+#### Image
+ - Primary Key: id
+ - Attributes:
+   - post: The post to which the image belongs (Foreign Key referencing Post).
+   - image: The image file.
+   - caption: The caption for the image.
+ - Relationships:
+   - One-to-Many with Post: Each image belongs to a specific post.
+
+<img width="755" alt="ER diagram" src="https://github.com/fh255/solo-travel/assets/34744096/e116fd1f-e59a-40a4-9809-4fcc10d3a670">
+
 ### Imagery
 
 All current images on the site and uploaded blog posts is downloaded from [Unsplash:](https://unsplash.com/de) .
