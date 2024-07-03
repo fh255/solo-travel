@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://future-travel2024-0cad95f48932.herokuapp.com/'
+    'future-travel2024-0cad95f48932.herokuapp.com'
 ]
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
