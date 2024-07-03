@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
@@ -10,6 +11,17 @@ from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post, Image, Comment
 
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
+
+def handler500(request):
+    return render(request, '500.html', status=500)
+
+def handler403(request, exception):
+    return render(request, '403.html', status=403)
+
+def handler400(request, exception):
+    return render(request, '405.html', status=405)
 
 class PostList(generic.ListView):
     model = Post
@@ -17,7 +29,6 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     context_object_name = 'post_list'
     paginate_by = 3  # Show 3 posts per page
-
 
 class AddPostView(LoginRequiredMixin, CreateView):
     model = Post
@@ -48,7 +59,6 @@ class AddPostView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
-
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -71,6 +81,7 @@ class PostDetail(View):
             },
         )
 
+    @method_decorator(login_required)
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -104,7 +115,6 @@ class PostDetail(View):
             },
         )
 
-
 class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     form_class = PostForm
@@ -136,7 +146,6 @@ class EditPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
-
 class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'delete_post.html'
@@ -145,7 +154,6 @@ class DeletePostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author or self.request.user.is_superuser
-
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
