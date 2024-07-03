@@ -19,7 +19,8 @@ def handler500(request):
 
 def handler403(request, exception):
     return render(request, '403.html', status=403)
-
+def handler405(request, exception):
+    return render(request, '405.html', status=405)
 
 class PostList(generic.ListView):
     model = Post
