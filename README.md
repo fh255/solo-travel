@@ -45,6 +45,7 @@ The site allows users to share their travel stories, upload photos from their jo
     * [JSHint:](#jshint)
     * [PEP8 Online:](#pep8-online)
     * [Lighthouse:](#lighthouse)
+  * [Test Cases for Models](#test-cases-for-models)
   * [Solved bugs](#solved-bugs)
   * [Known bugs](#known-bugs)
 * [Deployment](#deployment)
@@ -118,7 +119,6 @@ For more information: [View the Kanban Board](https://github.com/users/fh255/pro
 ### Existing Features
 
 #### Navigation bar:
-
 The site's navigation bar is consistently visible across all pages, utilizing Bootstrap's **fixed-top** class to remain fixed at the top of the browser viewport as the user scrolls.
 
 On the left-hand side of the navigation bar, users will find the Blog name "Solo|Travel". Clicking on this name redirects users to the home page.
@@ -263,13 +263,11 @@ A superuser account was created to manage the blog content on the site, granting
 Additionally, the admin panel offers further functionality to the superuser, such as creating post drafts that can be published later.
 
 #### System Messages:
-
 Throughout the site, system or flash messages provide feedback to users upon completing certain actions. These messages appear at the top of the screen and automatically disappear after a short period.
 
 <img width="582" alt="Massgae_alert" src="https://github.com/fh255/solo-travel/assets/34744096/0b711165-011a-40af-aa48-57d31e21603b">
 
 #### Footer
-
 The footer of our webpage showcases a tranquil, forested path, symbolizing our journey of discovery and growth. Connect with us on social media platforms including Facebook, YouTube, Instagram, and Twitter for solo travelers.
 
 <img width="490" alt="footer-sm" src="https://github.com/fh255/solo-travel/assets/34744096/c730fbce-20c6-465a-aa2c-dec767e5b2fd">
@@ -389,6 +387,7 @@ All current images on the site and uploaded blog posts is downloaded from [Unspl
   - [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
   - [Chrome DevTools:](https://developer.chrome.com/docs/devtools/) Used to test the response on different screen sizes, debugging and to generate a Lighthouse report to analyze page load.
   - [Font Awesome:](https://fontawesome.com/) Used throughout the site to add icons for aesthetic and UX purposes.
+  - [Google Sheets:](https://docs.google.com/spreadsheets/u/0/) Used to design the tables.
   - [Git:](https://git-scm.com/) Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
   - [GitHub:](https://github.com/) GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
   - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
@@ -416,7 +415,6 @@ All tests confirmed that the application functions correctly across these browse
 ### Validator Testing
 
 #### W3C Markup Validator:
-
 The HTML on all pages of the project was validated using the W3C Markup Validator to ensure there were no syntax errors. To validate the HTML files, all Django template tags were removed manually, and the HTML code was copied and inserted into the base template.
 
 Index page:
@@ -432,18 +430,15 @@ Add Post page:
 <img width="1208" alt="Edit Post test" src="https://github.com/fh255/solo-travel/assets/34744096/f9d90ded-0238-45d9-bc33-26d2cff4ecff">
 
 #### W3C CSS Validator:
-
 The W3C CSS Validator were used to validate the CSS to ensure there were no errors .
 <img width="1205" alt="CSS" src="https://github.com/fh255/solo-travel/assets/34744096/4a1b2032-d5bf-4cfb-93b6-af49d3575a3f">
 
 #### JSHint:
-
 JSHint was used to validate the JavaScript code, and no errors were found.
 
 <img width="991" alt="JS" src="https://github.com/fh255/solo-travel/assets/34744096/a34937d5-c83c-4f1c-961e-6a62019dd238">
 
 #### PEP8 Online:
-
 PEP8 Online linter (Python validator) The code passed without any errors on all files tested:
 
   - admin.py
@@ -474,7 +469,6 @@ PEP8 Online linter (Python validator) The code passed without any errors on all 
 <img width="979" alt="manage" src="https://github.com/fh255/solo-travel/assets/34744096/3def5021-9301-44f1-9e78-67c4169cd2be">
 
 #### Lighthouse:
-
 I have verified that the chosen colors and fonts are easy to read and accessible by running them through Lighthouse in Chrome Developer Tools on the following pages:
 
 Home page:
@@ -484,6 +478,35 @@ Home page:
 Post Detail page:
 
 <img width="787" alt="Post details LH" src="https://github.com/fh255/solo-travel/assets/34744096/567dccfc-2187-4ee8-99b2-a792555d661b">
+
+### Test Cases for Models:
+
+#### User Model
+ - Create a new user: Test creating a User object with valid data to ensure it is saved successfully in the database.
+ - Ensure username is unique: Test that creating two User objects with the same username raises an IntegrityError.
+ - Password is hashed: Test that the password is stored in a hashed format after creating and saving a User object.
+ - Email format validation: Test that creating a User object with an invalid email raises a ValidationError.
+<img width="543" alt="User Model Tests" src="https://github.com/fh255/solo-travel/assets/34744096/8d9b50df-4884-42fc-a9d6-5d781cb6e7d1">
+
+#### Post Model
+ - Create a new post: Test creating a Post object with valid data to ensure it is saved successfully in the database.
+ - Ensure slug is unique: Test that creating two Post objects with the same slug raises an IntegrityError.
+ - Associate post with user: Test that a Post object is correctly associated with a User object through the author field.
+ - Ensure status is within choices: Test that creating a Post object with an invalid status raises a ValidationError.
+ - Post likes functionality: Test that adding a User to a post's likes updates the likes count correctly.
+<img width="586" alt="Post Model test" src="https://github.com/fh255/solo-travel/assets/34744096/c8544557-b611-415d-a355-02da57fb1900">
+
+#### Comment Model
+ - Create a new comment: Test creating a Comment object with valid data to ensure it is saved successfully in the database.
+ - Associate comment with post: Test that a Comment object is correctly associated with a Post object.
+ - Comment approval status: Test that the approval status of a Comment object is updated correctly.
+<img width="586" alt="comment model test" src="https://github.com/fh255/solo-travel/assets/34744096/d7140e5a-aef9-43cc-87e9-e1cdfe88d431">
+
+#### Image
+ - Create a new image: Test creating an Image object with valid data to ensure it is saved successfully in the database.
+ - Associate image with post: Test that an Image object is correctly associated with a Post object.
+ - Caption can be blank: Test that creating an Image object with a blank caption is saved successfully in the database.
+<img width="587" alt="Image model test" src="https://github.com/fh255/solo-travel/assets/34744096/c182a043-5873-4828-a2ff-af2b33edd68b">
 
 ### Solved bugs
 
@@ -497,6 +520,7 @@ Post Detail page:
   - Currently no known bugs.
 
 ## Deployment
+
 The application was successfully deployed to Heroku with the following steps:
  - Login to Heroku dashboard to view installed apps.
  - Click on **New** => **Create new app**.
@@ -539,6 +563,12 @@ The application was successfully deployed to Heroku with the following steps:
   - In the terminal: Add, Commit and Push.
   - In Heroku navigate to the Deploy tab => click on Deploy Branch.
   - When build process is finished click on Open App to visit the live site.
+### Final Deployment steps
+- Set DEBUG to False: In settings.py, set the DEBUG flag to False.
+- Update X_FRAME_OPTIONS: Ensure this line exists in settings.py to make Summernote work in the deployed environment (for CORS security): X_FRAME_OPTIONS = 'SAMEORIGIN'.
+- Push changes to GitHub: Push your updated files to GitHub.
+- Remove DISABLE_COLLECTSTATIC: In the Heroku Config Vars for the application, delete the environment variable: DISABLE_COLLECTSTATIC.
+- Deploy the application: On the Heroku dashboard, go to the Deploy tab for the application and click on "Deploy Branch".
 
 ## Credits
 
