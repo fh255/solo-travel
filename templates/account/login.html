@@ -17,7 +17,7 @@
                     <div class="social-login mb-3">
                         <a href="{% provider_login_url 'google' %}" class="btn btn-outline-primary w-100 mb-2">{% trans "Log in with Google" %}</a>
                     </div>
-                    <p class="text-center">{% trans "Welcome back to the code|star blog. To leave a comment or like a post, please log in. If you have not created an account yet, then" %} <a class="link" href="{% url 'account_signup' %}">{% trans "sign up" %}</a> {% trans "first." %}</p>
+                    <p class="text-center">{% trans "Welcome back to the Solo|Travel blog. To leave a comment or like a post, please log in. If you have not created an account yet, then" %} <a class="link" href="{% url 'account_signup' %}">{% trans "sign up" %}</a> {% trans "first." %}</p>
                     <form class="login" method="POST" action="{% url 'account_login' %}">
                         {% csrf_token %}
                         {{ form.as_p }}
