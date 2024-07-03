@@ -419,10 +419,10 @@ body {
     margin: 0;
 }
 
-.footer a:hover {
-    color: #E74C3C; /* Change the color on hover */
+/* .footer a:hover {
+    color: #85a510; /* Change the color on hover */
     text-decoration: none;
-}
+} */
 
 .footer i {
     font-size: 1.5rem;
