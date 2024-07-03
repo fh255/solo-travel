@@ -407,9 +407,7 @@ body {
 
 /* Footer styles */
 .footer {
-    /* background-image: url('https://res.cloudinary.com/dwrqfvy4k/image/upload/v1620306744/forest-pathway.f40d379a6365.jpg'); */
-    background-image: url('https://res.cloudinary.com/dwrqfvy4k/image/upload/v1719611131/static/images/forest-pathway.f40d379a6365.jpg');
-
+    background-image: url('https://res.cloudinary.com/dwrqfvy4k/image/upload/v1620306744/forest-pathway.f40d379a6365.jpg');
     background-size: cover;
     background-position: center;
     padding: 40px 0;
@@ -453,5 +451,5 @@ body {
 }
 
 .shadow-sm {
-    box-shadow: 0
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
