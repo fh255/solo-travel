@@ -30,7 +30,7 @@ The site allows users to share their travel stories, upload photos from their jo
 * [Design](#design)
   * [Colours](#colours)
   * [Typography](#typography)
-  * [Entity Relationship diagrams for DBMS](#entity-relationship-diagrams-for-DBMS)
+  * [Entity Relationship diagrams for DBMS](#entity-relationship-diagrams-for-dbms)
   * [Imagery](#imagery)
 * [Technologies Used](#technologies-used)
   * [Languages Used:](#languages-used)
